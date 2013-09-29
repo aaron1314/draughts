@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Draughts</title>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/jquery-2.0.2.min.js"></script>
+    <script src="lib/peer.js"></script>
+    <script src="lib/createjs-2013.05.14.min.js"></script>
+    <script src="lib/vex.combined.min.js"></script>
+    <link rel="stylesheet" href="css/vex.css">
+    <link rel="stylesheet" href="css/vex-theme-flat-attack.css">
+    <style>
+        #main{
+            width: 800px;
+            position: relative;
+            margin: 0 auto;
+        }
+        #log{
+            border: 1px solid #000000;
+            height: 3em;
+            width: 100%;
+            display: none;
+        }
+        .invite-link{
+            width: 500px;
+        }
+    </style>
+</head>
+<body style="background-image: url(res/bg.jpg)">
+<div id="main">
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <textarea id="log"></textarea>
+</div>
+<script src="main.js"></script>
+<script src="onload.js"></script>
+</body>
+</html>

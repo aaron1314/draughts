@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="../client/lib/peer.js"></script>
+    <script>
+        var peerOption = {
+//  debug: 3,
+            host: 'localhost'
+        };
+
+        var count = 30;
+        var connect = 0;
+        for(var i = 0;i < count;i ++){
+            (function(index){
+                var left = new Peer(peerOption);
+                left.on('connection', function(conn) {
+                    console.log(index, 'left get connection', conn);
+                });
+                left.on('open', function(){
+                    console.log(index, 'open');
+                    var right = new Peer(peerOption);
+                    right.connect(left.id).on('open', function(){
+                        console.log(index, 'right open');
+                        console.debug(++connect);
+                    });
+                });
+            }(i));
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
