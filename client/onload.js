@@ -39,7 +39,7 @@ load(function(res){
 //    host: '192.168.3.77'
   };
   vex.dialog.open({
-    message: '请稍候...',
+    message: 'Loading...',
     escapeButtonCloses: false,
     showCloseButton: false,
     overlayClosesOnClick: false,
@@ -48,7 +48,7 @@ load(function(res){
   var peer = new Peer(peerOption);
   function onConnectionClose(){
       vex.dialog.alert({
-        message: '与对方的链接中断',
+        message: 'Disconnect with your friend!',
         escapeButtonCloses: false,
         showCloseButton: false,
         bottons: [{
@@ -75,7 +75,7 @@ load(function(res){
       vex.close();
       room = id;
       $dialog = vex.dialog.prompt({
-        message: '请把邀请链接发送给朋友',
+        message: 'Share this link with your friend!',
         buttons: [],
         escapeButtonCloses: false,
         showCloseButton: false,
